@@ -1,0 +1,52 @@
+{
+    "title": "Pyramid of Power",
+    "paragraphs": [
+       
+            {
+                "title": "Idee",
+                "imageurl": "assets/images/pyramid_octopus_design.jpeg",
+                "text": "Het idee is een stekkerblok dat zichzelf automatisch uitzet na een bepaalde tijd. Het voorkomt overladen en brandgevaarlijke transformators en zorgt voor awareness bij gebruikers."
+            },
+            {
+                "title": "Eerste ontwerp",
+                "imageurl": "assets/images/pyramid_octopus.jpg",
+                "text": "In eerste instantie hebben we gekozen voor een octopus met verschillende armen. In ieder van deze armen kan een oplader worden ingestoken."
+            },
+            {
+                "title": "Percentage meten?",
+                "imageurl": "assets/images/pyramid_wiring.jpg",
+                "text": "Eigenlijk wilden we graag direct meten hoe vol het apparaat zat en daarop feedback geven aan de gebruiker. Het is echter niet mogelijk om zonder interface naar het apparaat het batterijpercentage te meten. We hebben er daarom voor gekozen om een timer te maken in ieder van de armen die de stroom op die arm uitschakelt als de timer afloopt."
+            },
+            {
+                "title": "Ontwerp prototype",
+                "imageurl": "assets/images/pyramid_prototype.jpg",
+                "text": "Er zitten op iedere arm twee knoppen. Een draaiknop om de tijd te zetten en een drukknop om de timer te starten. Er gaan vervolgens leds branden om de gebruiker te laten zien hoe ver het apparaat geladen is. We gebruiken de neopixel library van adafruit en een timer library om het technisch te laten werken."
+            },
+            {
+                "title": "Verbeteringen",
+                "imageurl": "assets/images/pyramid_prototyping.jpg",
+                "text": "Tijdens het testen hebben we door middel van rapid prototyping de toelichting bij de knoppen verbeterd na iedere testpersoon. De feedback die de testpersonen gaven was duidelijk en konden we direct implementeren."
+            },
+            {
+                "title": "Feedbackverwerking",
+                "imageurl": "assets/images/pyramid_design.jpg",
+                "text": "Op basis van feedback tijdens de tussenpresentatie wilden we een wat serieuzer design maken voor de stekkerdoos. Na wat brainstormen zijn we op een piramide vorm gekomen waarvan de punt doorzichtig is."
+            },
+            {
+                "title": "Passen en meten",
+                "imageurl": "assets/images/pyramid_bottom_open.jpg",
+                "text": "Om de technische componenten helemaal in het prototype te krijgen is besloten om alles netjes te solderen en niet de prototypedraden en een breadboard te gebruiken. Dat wilden we ook vermijden omdat het prototype niet makkelijk open te maken is en losse draden moeilijk te repareren zijn."
+            },
+            {
+                "title": "Klaar!",
+                "imageurl": "assets/images/pyramid_done.jpg",
+                "text": "Het uiteindelijke product is in zowel design als functionaliteit op wat kleine dingetjes na geworden wat we wilden bereiken."
+            },
+            {
+                "title": "Poster",
+                "imageurl": "assets/images/pyramid_poster.jpg",
+                "text": "We wilden de vorm van het design veel nadruk geven op de poster. De driehoekige vorm van de piramide komt daarom ook vaak terug."
+            }
+        ]
+    
+}
