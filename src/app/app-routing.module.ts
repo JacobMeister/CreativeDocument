@@ -4,7 +4,7 @@ import { BlogComponent } from './blog/blog.component';
 import { InfoComponent } from './info/info.component';
 
 const appRoutes: Routes = [
-  { path: '', component:  InfoComponent},
+  { path: 'creativedocument', component:  InfoComponent},
   { path: 'blog/:id', component:  BlogComponent},
   { path: 'about', component:  InfoComponent}
 ];
