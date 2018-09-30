@@ -29,7 +29,7 @@ export class BlogComponent implements OnInit {
   }
 
   readJSON(){
-    this.httpService.get('assets/text/'+ this.blogType + '.json').subscribe(
+    this.httpService.get('../assets/text/'+ this.blogType + '.json').subscribe(
       data => {
         this.title = data['title'];
         this.paragraphs = data['paragraphs'];
