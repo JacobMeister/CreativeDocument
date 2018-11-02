@@ -1,0 +1,73 @@
+{
+    "title": "Google Home Wifi Switch",
+    "paragraphs": [
+       
+            {
+                "title": "Idee",
+                "imageurl": "assets/images/infrared_switch.png",
+                "text": "Het plan is om een simpele switch te maken die bestuurbaar is door bijvoorbeeld een Amazon Alexa, als vernieuwing van de oude infraroodschakelaars. Deze moet zonder grondige technische kennis geïnstalleerd kunnen worden in een huis en het liefst volgens een plug en play principe werken. Het liefste ziet het er modern en aantrekkelijk uit, zonder te veel aandacht op zichzelf te trekken. Aangezien ik geen amazon devices heb moet ik die zelf maken met een Raspberry Pi."
+            },
+            {
+                "title": "AlexaPi",
+                "imageurl": "assets/images/alexapi.jpg",
+                "text": "Het installeren van een raspberry pi met AlexaPi zou vrij eenvoudig moeten zijn, maar bleek moeilijker te zijn dan gedacht. Na een middagje zoeken en een github issue te openen bleek het een simpel probleem met een simpele oplossing te zijn. Bij de laatste release van AlexaPi blijkt een probleem te zitten in een aantal libraries die op python 2 zaten in plaats van python 3. Het handmatig updaten van de libraries bleek het makkelijk op te lossen. De Raspberry Pi werkt prima en na een account te maken op de Amazon developers console reageert de AlexaPi op commando’s."
+            },
+            {
+                "title": "Microcontroller",
+                "imageurl": "assets/images/wemos_d1_mini.jpg",
+                "text": "Hierna moet de microcontroller ingesteld worden om te communiceren met een wifinetwerk. In mijn geval een Wemos D1 Mini board gebaseerd op de ESP8266 wifi module met een CH340G Serial-USB chip. Het board maakt gebruik van het FauxMO protocol. Het emuleert het gedrag van een Belkin WEMO WiFi switch om gekoppeld te kunnen worden aan het netwerk van Amazon."
+            },
+            {
+                "title": "Tegenslag",
+                "imageurl": "assets/images/bumps.jpg",
+                "text": "Hier ging het echter fout. Belkin heeft het WEMO systeem veranderd waardoor het FauxMO protocol niet meer werkt. Er moet via de Belkin Alexa skill contact gemaakt worden met de switches en hierdoor kan er geen directe koppeling aan Alexa gemaakt worden. Uiteindelijk bleek dat het goed was dat het project hier strandde, aangezien ik er later achter kwam dat Amazon alle device actions blokkeert als de commando’s van een “niet officieel” device komt. Zo kan er geen muziek worden afgespeeld, of video’s worden gestreamt. Dat betekent dat het überhaupt niet had gewerkt met de AlexaPi. Omdat dit systeem overduidelijk niet ging werken zonder het maken van een custom Alexa skill (heel veel werk dus) heb ik het laten varen."
+            },
+            {
+                "title": "Omschakeling",
+                "imageurl": "assets/images/google_home.jpeg",
+                "text": "De volgende optie was Google Home. Uit eerdere ervaringen met google weet ik dat ze een fijne developer omgeving hebben en veel documentatie hebben over al hun producten. Dit bleek ook zo te zijn met Google Home. Bij een bijzondere uitgave van Raspberry Pi magazine heeft google een installatie van Google Home op Raspberry Pi uitgebracht."
+            },
+            {
+                "title": "Goed vooruitzicht",
+                "imageurl": "assets/images/cloud_platform.png",
+                "text": "Met een verse installatie van de Raspberry Pi en een beetje hulp van de documentatie van Google kon ik de assistant draaiende krijgen. Google is een stuk aardiger voor de zelfbouwers en “hackers” die hun Google Home zelf willen maken. Ze bieden op hun developer console alle acties aan die een officiele Home ook kan. Muziek spelen van Spotify of Deezer, Video’s streamen naar Chromecast of smart tv’s en dus ook het gebruiken van smart devices."
+            },
+            {
+                "title": "Opties",
+                "imageurl": "assets/images/hue.jpeg",
+                "text": "Conventionele smart switches en devices zitten vaak aangesloten op een clouddienst van het bedrijf wat ze verkoopt. Die dienst blijft continu in verbinding met de apparaten en ontvangt commando’s van Google Assistant. Die commando’s worden gemaakt in Google’s Dialogflow. Hierin kunnen bedrijven voor ieder apparaat zelf een flow maken hoe het apparaat gebruikt wordt. Hiermee kunnen ze dus bepalen wat voor commando verstuurd wordt bij wat voor user input. "
+            },
+            {
+                "title": "Een",
+                "imageurl":"assets/images/dialogflow.png",
+                "text": "Om een eigengemaakt device aan te kunnen sluiten aan Google Assistant zijn er drie verschillende opties. De eerste, en meest makkelijke is een webserver draaien op het device, en vanuit Google’s Dialogflow daar berichten naartoe te sturen. Hiervoor moet echter het een en ander gedaan worden aan portforwarding of reverse proxy’s. Dit is voor een hoop mensen niet makkelijk, en kan in sommige situaties helemaal niet. Het is ook een beveiligingsrisico. Hackers kunnen zo mogelijk makkelijker in je systeem komen. Hierom heb ik dit niet geprobeerd."
+            },
+            {
+                "title": "Twee",
+                "imageurl": "assets/images/ifttt.gif",
+                "text": "Een andere optie is het gebruiken van IF This Then That (IFTTT). Dit is een app waarmee je allemaal services kan koppelen. Het is in dit geval feitelijk een substitutie voor het systeem wat bedrijven gebruiken om de commando’s van Google te interpreteren en daarmee je apparaat aan te sturen. Dit had ik kunnen gebruiken, maar ik zocht eigenlijk een meer directe manier om het apparaat aan te sturen, zonder dat er nog allemaal services tussen hoeven."
+            },
+            {
+                "title": "Drie",
+                "imageurl": "assets/images/poc.jpg",
+                "text": "De derde manier was precies die oplossing. De Google API accepteert alleen tekstuele input. Alles wat jij tegen Google Home zegt, wordt eerst geïnterpreteerd naar text, en dan wordt het verstuurd naar de Google Server die gaat berekenen wat voor reactie erop moet komen. Je zou die input kunnen afvangen op het moment dat er een specifiek woord inzit. Hierdoor wordt het niet verstuurd naar de Google Dialogflow, maar kan je zelf speciale acties laten uitvoeren. Dit is de oplossing die ik heb gekozen. Op het moment dat het woord “wireless” in een stemcommando zit, wordt het niet verstuurd naar Google, maar wordt er lokaal gekeken naar de inhoud van het commando en op basis daarvan wordt er een bericht gestuurd naar het IoT device. Zo kunnen lokaal commando's worden verstuurd naar IoT devices om bijvoorbeeld lampen aan of uit te doen."
+            },
+            {
+                "title": "Product",
+                "imageurl": "assets/images/switch_final.jpg",
+                "text": "Het uiteindelijke product wat ik heb opgeleverd is een kartonnen model van een huis met daarin twee ledjes. Deze simuleren de switches die in een huis ingeplugd zouden kunnen worden. Dit is bedoeld als bewijs dat de techniek erachter werkt en in het apparaat ook zou werken. Ook heb ik een model gemaakt van hoe het apparaat er uit zou moeten zien. Dit heb ik gemaakt met karton en een verlengsnoer."
+            },
+            {
+                "title": "Poster",
+                "imageurl": "assets/images/poster_wifi_switch.png",
+                "text": "Voor het poster wilde ik een moderne look maken. Hierom heb ik gekozen voor het font Eurostile. Ook heb ik voor geometrische vormen in basiskleuren gekozen. De blauwe tinten geven impressies van het efficiente en logische van het apparaat. De gele tinten benadrukken het uitdagende en analytische aspect van het product."
+            },
+            {
+                "title": "Conclusie",
+                "imageurl": "assets/images/pyramid_octopus_design.jpeg",
+                "text": "Ik vond het een leuk en leerzaam project om te doen. Ik vind het jammer dat ik niet zo goed ben toegekomen aan het designaspect van het project omdat ik anderhalve week ben verloren aan het implementeren van de AlexaPi en FauxMo. Als ik het opnieuw zou mogen doen had ik vanaf het begin met Google Home gewerkt en had een meer moeite gestopt in het ontwerpen en itereren in het design van het uiteindelijke product."
+            }
+            
+        ]
+    
+}
