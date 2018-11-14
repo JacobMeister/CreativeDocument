@@ -1,0 +1,27 @@
+{
+    "title": "Ontwerplessen",
+    "paragraphs": [
+       
+            {
+                "title": "Objecten tekenen",
+                "imageurl": "assets/images/Object_tekenen.jpg",
+                "text": "Het leren tekenen van objecten."
+            },
+            {
+                "title": "Glazen fles",
+                "imageurl": "assets/images/glazen_fles.jpg",
+                "text": "Glazen objecten tekenen is moeilijker omdat het licht in de fles weerkaatst en de schaduw ingewikkeld maakt."
+            },
+            {
+                "title": "Stofzuigvloer",
+                "imageurl": "assets/images/stofzuigvloer.jpg",
+                "text": "Een concept om stofzuigen automatisch te maken, door middel van gaten in de vloer en een afzuigsysteem."
+            },
+            {
+                "title": "Bril met ruitenwisser",
+                "imageurl": "assets/images/wiper_glasses.jpg",
+                "text": "Een bril met ruitenwissers, zodat je door de regen kan lopen en nog steeds goed door je bril kan zien."
+            }
+        ]
+    
+}

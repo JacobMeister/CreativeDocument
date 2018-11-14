@@ -1,41 +1,59 @@
-<div class="row">
-  <div class="title-div" width="100%">
+<div class="title-div" width="100%">
     <h1>{{title}}</h1>
   </div>
 
-  <div class="container"*ngFor="let item of paragraphs; let i = index">
+  <div *ngFor="let item of paragraphs; let i = index">
     
-    <div class="row" *ngIf="isEven(i)">
+    <div class="row screen-size blue" *ngIf="isEven(i)">
         
-      <div class="col-md-1">
+      <div class="col-md-2">
           
       </div>
-      <div class="col-md-5">
+
+      <div class="col-md-3">
         <div class="text-spacer">
           <h3>{{item.title}}</h3>
           {{item.text}}
         </div>
       </div>
-      <div class="col-md-6">
-          <img [src]="item.imageurl" width="100%">
+
+      <div class="col-md-2">
+          
       </div>
+
+      <div class="col-md-3">
+          <img class="text-spacer" [src]="item.imageurl" width="100%">
+      </div>
+      <div class="col-md-2">
+          
+      </div>
+      
     <br>
     <br>
     <br>
     </div>
 
-    <div class="row" *ngIf="!isEven(i)">
-        
-        <div class="col-md-6">
-            <img [src]="item.imageurl" width="100%">
+    <div class="row screen-size white" *ngIf="!isEven(i)">
+        <div class="col-md-2">
+          
         </div>
-        <div class="col-md-5 text-right">
+
+        <div class="col-md-3">
+            <img class="text-spacer" [src]="item.imageurl" width="100%">
+        </div>
+
+        <div class="col-md-2">
+          
+        </div>
+
+        <div class="col-md-3 text-right">
             <div class="text-spacer">
                 <h3>{{item.title}}</h3>
                 {{item.text}}
               </div>
         </div>
-        <div class="col-md-1">
+
+        <div class="col-md-2">
           
         </div>
        <br>
@@ -45,6 +63,3 @@
      
   </div>
       
-    
-    
-</div>
