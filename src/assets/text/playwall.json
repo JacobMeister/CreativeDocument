@@ -1,0 +1,29 @@
+{
+    "title": "De Speelmuur",
+    "paragraphs": [
+       
+            {
+                "title": "Probleem",
+                "imageurl": "assets/images/",
+                "text": "Kinderen en ouderen moeten meer bewegen. Dat was in eerste instantie het probleem wat we wilden oplossen. Omdat het ons leuk leek om te werken met de Microsoft Kinect wilden we een interactief spel maken waardoor we ouderen en kinderen meer lieten bewegen. Omdat het twee compleet verschillende doelgroepen zijn liepen we al snel tegen het probleem aan dat we geen spellen konden verzinnen die voor beide doelgroepen toepasselijk zou zijn. Hierom hebben we besloten om het toe te passen op kinderen, en dan vooral een spel waardoor we kinderen kunnen laten buitenspelen."
+            },
+            {
+                "title": "Hoe activeer je kinderen",
+                "imageurl": "assets/images/",
+                "text": "De volgende vraag was, hoe maken we een spel waardoor kinderen naar buiten willen komen om buiten te spelen. Ik heb bij informatica geleerd dat Gamification een heel krachtige oplossing is om mensen te activeren om dingen te doen. Met relatief nietszeggende high scores of \"beloningen\" kan je mensen dingen laten doen die ze normaal niet zo actief zouden doen. Die high score hebben we daarom aangehouden als motivator om de kinderen daadwerkelijk naar buiten te krijgen."
+            },
+            {
+                "title": "Soort Spel",
+                "imageurl": "assets/images/",
+                "text": "We wilden een spel maken wat iedereen kon gebruiken zonder de regels van te voren te weten. Ook wilden we een spel waarin de creativiteit en het \"zelfverzonnen\" speelplezier van kinderen wilden ondersteunen. Hierom kan het spel niet te ingewikkeld zijn. We begonnen met het idee om een spel te maken waar mensen in een bepaalde houding moeten staan. Dit vonden we echter niet interactief genoeg. Na wat brainstormen besloten we om een spel te maken met een bal. Ieder kind heeft thuis wel een bal en een balspel kan een kind zo moeilijk of makkelijk maken als hij zelf wil."
+            },
+            {
+                "title": "Voetbalspel",
+                "imageurl": "assets/images/",
+                "text": "We hebben verschillende manieren bedacht waarmee we met de Kinect een voetbal konden meten. De Kinect werkt met een infraroodcamera om afstanden te meten. Dit werkt door een grid van infrarood stipjes de ruimte in te schijnen en van ieder van die puntjes de afstand te meten. Zo kan er een 3d model van de ruimte gemaakt worden. "
+            }
+            
+            
+        ]
+    
+}
