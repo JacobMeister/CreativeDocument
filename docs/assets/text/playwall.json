@@ -8,8 +8,13 @@
                 "text": "Kinderen en ouderen moeten meer bewegen. Dat was in eerste instantie het probleem wat we wilden oplossen. Omdat het ons leuk leek om te werken met de Microsoft Kinect wilden we een interactief spel maken waardoor we ouderen en kinderen meer lieten bewegen. Omdat het twee compleet verschillende doelgroepen zijn liepen we al snel tegen het probleem aan dat we geen spellen konden verzinnen die voor beide doelgroepen toepasselijk zou zijn. Hierom hebben we besloten om het toe te passen op kinderen, en dan vooral een spel waardoor we kinderen meer kunnen laten buitenspelen."
             },
             {
+                "title": "Ontwerpmethoden",
+                "imageurl": "assets/images/speelmuur_problemposing.png",
+                "text": "Om tot onze oplossing te komen hebben gebruik gemaakt van Problem Posing. Eerst hebben we de huidige situatie geschetst, namelijk dat kinderen veel tv kijken en computeren, in plaats van buiten te spelen. In de gewenste situatie worden kinderen geactiveerd om buiten te spelen en er samen op uit te gaan. Gedurende het project hebben we kleinere problemen ook zo aangepakt. "
+            },
+            {
                 "title": "Hoe activeer je kinderen",
-                "imageurl": "assets/images/",
+                "imageurl": "assets/images/speelmuur_speeltuin.png",
                 "text": "De volgende vraag was: hoe maken we een spel waardoor kinderen naar buiten willen komen om te spelen. Ik heb bij informatica geleerd dat Gamification een heel krachtige oplossing is om mensen te activeren om dingen te doen. Met relatief weinigzeggende high scores of \"beloningen\" kan je mensen dingen laten doen die ze normaal niet zo actief zouden doen. Die high score hebben we daarom aangehouden als motivator om de kinderen daadwerkelijk naar buiten te krijgen."
             },
             {
@@ -20,7 +25,7 @@
             {
                 "title": "Technische werking Kinect",
                 "imageurl": "assets/images/speelmuur_kinecttech.png",
-                "text": "We hebben verschillende manieren bedacht waarmee we met de Kinect de locatie van een voetbal konden meten. De Kinect werkt met een infraroodcamera om afstanden te meten. Dit werkt door een grid van infrarood stipjes de ruimte in te schijnen en van ieder van die puntjes de afstand te meten. Zo kan er een 3d model van de ruimte gemaakt worden. Hier moesten we rekening mee houden met de plaatsing van de Kinect. Omdat de Kinect vanuit 1 punt filmt, ontstaat er een zogenaamde \"Cone of Vision\", dit zorgt voor perspectief wat het correct en nauwkeurig meten van object moeilijker maakt."
+                "text": "Omdat we in 3 dimensies de bal willen meten hebben we na wat afwegen besloten om met de Microsoft Kinect te gaan werken. We hebben verschillende manieren bedacht waarmee we met de Kinect de locatie van een voetbal konden meten. De Kinect werkt met een infraroodcamera om afstanden te meten. Dit werkt door een grid van infrarood stipjes de ruimte in te schijnen en van ieder van die puntjes de afstand te meten. Zo kan er een 3d model van de ruimte gemaakt worden. Hier moesten we rekening mee houden met de plaatsing van de Kinect. Omdat de Kinect vanuit 1 punt filmt, ontstaat er een zogenaamde \"Cone of Vision\", dit zorgt voor perspectief wat het correct en nauwkeurig meten van object moeilijker maakt."
             },
             {
                 "title": "Plaatsing Kinect",
@@ -29,17 +34,17 @@
             },
             {
                 "title": "Achter de spelers",
-                "imageurl": "assets/images/",
+                "imageurl": "assets/images/speelmuur_achterspelers.png",
                 "text": "Als de Kinect achter de spelers staat is er een grote kans dat de infraroodstralen geblokkeerd worden door de spelers en de bal daarom niet te zien is in de ruimte. Omdat we het liefst de bal altijd kunnen zien, is er niet voor deze optie gekozen."
             },
             {
                 "title": "Naast het speelveld",
-                "imageurl": "assets/images/",
-                "text": "Met de Kinect naast het speelveld kan het hele speelveld worden bekeken. De spelers kunnen niet direct vor de camera staan waardoor de bal altijd te zien blijft. Het nadeel aan deze positie is dat door de eerder genoemde Cone of Vision de bal moeilijk te meten is op verschillend plekken op de muur. Hierom hebben we niet voor deze optie gekozen."
+                "imageurl": "assets/images/speelmuur_naastspelers.png",
+                "text": "Met de Kinect naast het speelveld kan het hele speelveld worden bekeken. De spelers kunnen niet direct voor de camera staan waardoor de bal altijd te zien blijft. Het nadeel aan deze positie is dat door de eerder genoemde Cone of Vision de bal moeilijk te meten is op verschillend plekken op de muur. Hierom hebben we niet voor deze optie gekozen."
             },
             {
                 "title": "Boven de muur",
-                "imageurl": "assets/images/",
+                "imageurl": "assets/images/speelmuur_bovenmuur.png",
                 "text": "De derde optie voor de Kinect is boven de muur. Hiermee kan de Kinect langs de muur naar beneden kijken. Hoewel de bal niet altijd zichtbaar is, namelijk alleen maar vlak bij de muur, is dit een betere oplossing dan naast het speelveld. Vlak bij de muur is namelijk het belangrijkste punt waar we moeten meten. Ook is het Cone of Vision probleem niet zo substantieel als naast het speelveld. Dit is de plek waar de Kinect uiteindelijk geplaatst is."
             },
             {
@@ -49,13 +54,13 @@
             },
             {
                 "title": "Standaardcode",
-                "imageurl": "assets/images/",
+                "imageurl": "assets/images/speelmuur_averagepoint.png",
                 "text": "Toen ik de code aan het schrijven was voor de Kinect heb ik eigenlijk eerst gekeken of er voorbeelden waren in de libraries die al grotendeels voldeden aan de toepassing die wij gingen maken. Die bleek er een te zijn. In die Kinect library zit een AveragePointTracking voorbeeld. Die pakt alle voorwerpen die hij ziet, en berekent daar het gemiddelde punt van. Als er dus een bal wordt gegooid naar de muur wordt het gemiddelde punt gepakt van de bal. Hiermee heb je al een x en y coordinaat, en kan er gekeken worden waar de bal is op de vloer."
             },
             {
                 "title": "Uitbreiding code",
-                "imageurl": "assets/images/",
-                "text": "Met de x en y coordinaat kunnen we echter nog niet de hoogte van de bal bepalen. Dit is natuurlijk van belang, omdat we anders horizontaal de locatie van de bal kunnen meten. Om de hoogte van de bal te bepalen gebruiken we de functie getDepth() van de Kinect library. Deze kan ons de diepte van een specifiek punt geven. Als we daar het gemiddelde punt van de bal instoppen, kunnen we daaruit precies de hoogte van de bal vanaf de grond berekenen. Hiermee kunnen we vrij nauwkeurig in hoogte en breedte bepalen waar de bal de muur raakt."
+                "imageurl": "assets/images/speelmuur_customcode.jpeg",
+                "text": "Met de x en y coordinaat kunnen we echter nog niet de hoogte van de bal bepalen. Dit is natuurlijk van belang, omdat we anders horizontaal de locatie van de bal kunnen meten. Om de hoogte van de bal te bepalen gebruiken we de functie getDepth() van de Kinect library. Deze kan ons de diepte van een specifiek punt geven. Als we daar het gemiddelde punt van de bal instoppen, kunnen we daaruit precies de hoogte van de bal vanaf de grond berekenen. Hiermee kunnen we vrij nauwkeurig in hoogte en breedte bepalen waar de bal de muur raakt. Ook moet er een scoresysteem komen om te controleren of het goede vak geraakt wordt en de score bij te houden."
             },
             {
                 "title": "User Interface",
@@ -66,6 +71,11 @@
                 "title": "Design",
                 "imageurl": "assets/images/speelmuur_design.png",
                 "text": "Omdat de speelmuur aantrekkelijk moest zijn voor kinderen, moest er nagedacht worden over het design van de gehele muur. We hebben gekozen voor een kleurrijk ontwerp om zo kinderen naar de speeltuin te trekken. Ook de poster is heel kleurrijk om zo veel mogelijk aandacht te trekken van de kinderen die uiteindelijk met de muur moeten gaan spelen."
+            },
+            {
+                "title": "Evaluatie",
+                "imageurl": "assets/images/speelmuur_evaluatie.jpg",
+                "text": "We liepen aan het begin van dit project goed op schema. We hadden al een probleem gevonden om op te lossen en zelfs al een paar ideeen om het op te lossen. Toen we gingen werken liepen we echter snel tegen het probleem aan van de Kinect. We kregen de Kinect op geen enkele manier goed aangesloten en daardoor hadden we bij de tussenpresentatie nog niets om te laten zien op technisch gebied. Er was al wel iemand bezig geweest met het design van de muur en van de poster, dus daar liepen we op zich wel op schema. Toen eenmaal de Kinect aangesloten was kwam ik er snel achter dat de libraries van OpenKinect niet heel erg uitgebreid waren. We hadden geluk dat er wel precies eentje bij zat die bij onze toepassing paste. Het was leuk om weer met een groep te werken. De groep waar ik in zat was gevarieerd en gezellig. Ik heb weer vooral de technische zaken op me genomen, omdat dit iets is wat ik het leukste vind. Ik heb me deze keer wel voorgenomen om meer betrokken te blijven bij het design en de ideeen van de groep. Dit had ik vorig groepsproject niet genoeg gedaan. Ik vind dat het relatief goed is gelukt, ik merk wel dat ik het moeilijk vind om er actief mee bezig te zijn. Aangezien ik het minder interessant vind dan het technische gedeelte. Al met al vond ik het een leuk project."
             }
 
             
