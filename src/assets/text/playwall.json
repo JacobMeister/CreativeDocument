@@ -18,10 +18,36 @@
                 "text": "We wilden een spel maken wat iedereen kon gebruiken zonder de regels van te voren te weten. Ook wilden we een spel waarin de creativiteit en het \"zelfverzonnen\" speelplezier van kinderen wilden ondersteunen. Hierom kan het spel niet te ingewikkeld zijn. We begonnen met het idee om een spel te maken waar mensen in een bepaalde houding moeten staan. Dit vonden we echter niet interactief genoeg. Na wat brainstormen besloten we om een spel te maken met een bal. Ieder kind heeft thuis wel een bal en een balspel kan een kind zo moeilijk of makkelijk maken als hij zelf wil."
             },
             {
-                "title": "Voetbalspel",
+                "title": "Technische werking Kinect",
                 "imageurl": "assets/images/",
-                "text": "We hebben verschillende manieren bedacht waarmee we met de Kinect een voetbal konden meten. De Kinect werkt met een infraroodcamera om afstanden te meten. Dit werkt door een grid van infrarood stipjes de ruimte in te schijnen en van ieder van die puntjes de afstand te meten. Zo kan er een 3d model van de ruimte gemaakt worden. "
+                "text": "We hebben verschillende manieren bedacht waarmee we met de Kinect de locatie van een voetbal konden meten. De Kinect werkt met een infraroodcamera om afstanden te meten. Dit werkt door een grid van infrarood stipjes de ruimte in te schijnen en van ieder van die puntjes de afstand te meten. Zo kan er een 3d model van de ruimte gemaakt worden. Hier moesten we rekening mee houden met de plaatsing van de Kinect. Omdat de Kinect vanuit 1 punt filmt, ontstaat er een zogenaamde \"Cone of Vision\", dit zorgt voor perspectief wat het correct en nauwkeurig meten van object moeilijker maakt."
+            },
+            {
+                "title": "Plaatsing Kinect",
+                "imageurl": "assets/images/",
+                "text": "In eerste instantie waren er 3 mogelijkheden om de locatie van de bal te meten. Allereerst achter de spelers, zodat de Kinect rechtstreeks naar de muur schijnt. Ten tweede naast het speelveld, zodat de Kinect de muur aan de zijkant kan zien. De derde optie was boven de muur, zodat de Kinect langs de muur af de vloer kan zien."
+            },
+            {
+                "title": "Achter de spelers",
+                "imageurl": "assets/images/",
+                "text": "Als de Kinect achter de spelers staat is er een grote kans dat de infraroodstralen geblokkeerd worden door de spelers en de bal daarom niet te zien is in de ruimte. Omdat we het liefst de bal altijd kunnen zien, is er niet voor deze optie gekozen."
+            },
+            {
+                "title": "Naast het speelveld",
+                "imageurl": "assets/images/",
+                "text": "Met de Kinect naast het speelveld kan het hele speelveld worden bekeken. De spelers kunnen niet direct vor de camera staan waardoor de bal altijd te zien blijft. Het nadeel aan deze positie is dat door de eerder genoemde Cone of Vision de bal moeilijk te meten is op verschillend plekken op de muur. Hierom hebben we niet voor deze optie gekozen."
+            },
+            {
+                "title": "Boven de muur",
+                "imageurl": "assets/images/",
+                "text": "De derde optie voor de Kinect is boven de muur. Hiermee kan de Kinect langs de muur naar beneden kijken. Hoewel de bal niet altijd zichtbaar is, namelijk alleen maar vlak bij de muur, is dit een betere oplossing dan naast het speelveld. Vlak bij de muur is namelijk het belangrijkste punt waar we moeten meten. Ook is het Cone of Vision probleem niet zo substantieel als naast het speelveld. Dit is de plek waar de Kinect uiteindelijk geplaatst is."
+            },
+            {
+                "title": "Kinect aansluiten",
+                "imageurl": "assets/images/",
+                "text": "Het aansluiten van de Kinect bleek een lastigere opgave dan gedacht. Er zijn twee manieren om de Kinect aan te sluiten op Processing. De OpenKinect library voor Processing en SimpleOpenNI voor Processing"
             }
+
             
             
         ]
